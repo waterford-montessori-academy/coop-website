@@ -4,12 +4,11 @@ const server = require('http').Server(app)
 const io = require('socket.io')(server)
 const { v4: uuidV4 } = require('uuid')
 
-app.set('view engine', 'tsx')
+app.set('view engine', 'ejs')
 app.use(express.static('public'))
-app.engine('tsx', require('express-react-views').createEngine());
 
 app.get('/call', (req, res) => {
-  res.redirect(`/call/${uuidV4()}`)
+  res.redirect(`/call/${uuidV4}`)
 })
 
 app.get('/call/:room', (req, res) => {
