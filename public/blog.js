@@ -6,5 +6,5 @@ $(document).ready(() => {
   $.getJSON("https://raw.githubusercontent.com/waterford-montessori-academy/coop-blog/main/posts/" + year + "/" + month + "/" + day + ".json", function (data) {
     $(document.body).append("<h1>" + data.title + "</h1><br/>" + "<h2>Today's blog post, courtesy of " + data.author + "<br />" + data.content);
   })
-}
+})
 // @license-end  
