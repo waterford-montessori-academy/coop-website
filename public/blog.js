@@ -4,7 +4,7 @@ $(document).ready(() => {
   const day = new Date().getDate();
   const year = new Date().getFullYear();
   $.getJSON("https://raw.githubusercontent.com/waterford-montessori-academy/coop-blog/main/posts/" + year + "/" + month + "/" + day + ".json", function (data) {
-    $(document.body).append("<h1>" + data.title + "</h1><br/>" + "<h2>Today's blog post, courtesy of " + data.author + "<br />" + data.content);
+    $(document.body).append("<h1>" + data.title + "</h1>" + "<h2>Today's blog post, courtesy of " + data.author + "</h2><br />" + data.content);
   })
 })
 // @license-end  
