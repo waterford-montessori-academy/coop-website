@@ -13,5 +13,6 @@ $(document).ready(() => {
     else {
       $(document.body).append("There is no blog post yet.");
     }
+  })
 })
 // @license-end  
