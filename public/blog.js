@@ -6,9 +6,9 @@ $(document).ready(() => {
   const url = "https://raw.githubusercontent.com/waterford-montessori-academy/coop-blog/main/posts/" + year + "/" + month + "/" + day + ".json";
   $.getJSON(url, function (data) {
     const http = new XMLHttpRequest();
-    http.open('HEAD', url, false);
+    http.open('GET', url, false);
     http.send();
-    if (http.status != 404) {
+    if (http.status !== 404) {
       $(document.body).append("<img style='display: block; margin-left: auto; margin-right: auto; width: " + data.width + "; height: " + data.height +  ";' src='" + data.picture + "'><h1>" + data.title + "</h1>" + "<h3>Today's blog post, courtesy of " + data.author + "</h3><h4>" + data.description + "</h4><h5>" + data.content + "</h5>");
     }
     else {
